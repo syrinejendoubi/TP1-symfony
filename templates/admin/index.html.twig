@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}index{% endblock %}
+
+{% block body %}
+<style>
+
+</style>
+<hr>
+<h1>Agences</h1>
+
+
+<h6><a href={{path('AjouterAgence')}}>Ajouter</a></h6>
+<tbody>
+<table class='table'>
+<thead class="thead-dark">
+<tr>
+{% for k,v in agence %} 
+  
+    <th scope="col">{{k}}</th>
+
+{% endfor %}
+<th scope="col">Actions</th>
+</tr>
+<tr>
+{% for k,v in agence %} 
+  
+    <td>{{v}}</td>
+
+{% endfor %}
+<td><a href={{path('consulterAgence',{'id':1})}}>Voir</a>
+    <a href={{path('modifierAgence',{'id':1})}}>Modifier</a>
+    <a href={{path('supprimerAgence',{'id':1})}}>Supprimer</a> </td>
+</tr>
+</table>
+<hr>
+<h1>Voitures</h1>
+
+
+<h6><a href={{path('AjouterVoiture')}}>Ajouter</a></h6>
+<table class='table'>
+<thead class="thead-dark">
+<tr>
+<br>
+{% for k,v in voiture %} 
+  
+    <th scope='col'>{{k}}</th>
+
+{% endfor %}
+<th scope='col'>actions<th/>
+</tr>
+
+<tr>
+{% for k,v in voiture %} 
+  
+    <td>{{v}}</td>
+
+ {% endfor %}
+ <td>
+    <a href={{path('ModifierVoiture',{'id':1})}}>Modifier</a>
+    <a href={{path('SupprimerVoiture',{'id':1})}}>Supprimer</a> </td>
+</tr>
+</table> 
+
+</br> 
+<hr>
+{% endblock %}
